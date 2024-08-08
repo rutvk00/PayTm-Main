@@ -39,7 +39,7 @@ jobs:
           sudo docker pull rutvk00/paytm-main:latest
           sudo docker stop paytm-main || true
           sudo docker rm paytm-main || true
-          sudo docker run -d --name paytm-main -p 3005:3000 rutvk00/paytm-main:latest
+          sudo docker run -d --name paytm-main -p 3005:3000 --restart always -e DATABASE_URL=${{ secrets.DATABASE_URL }} rutvk00/paytm-main:latest
 
 
 
