@@ -1,4 +1,5 @@
 "use server"
+import { Prisma } from '@prisma/client';
 import { getServerSession } from "next-auth";
 import { authOptions } from "../auth";
 import prisma from "@repo/db/client";
@@ -22,7 +23,7 @@ export async function p2pTransfer(to: string, amount: number) {
             message: "User not found"
         }
     }
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx : Prisma.TransactionClient) => {
            await tx.$queryRaw`SELECT * FROM "Balance" WHERE "userId" = ${Number(from)} FOR UPDATE`;
 
           const fromBalance = await tx.balance.findUnique({
