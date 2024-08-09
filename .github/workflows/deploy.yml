@@ -43,5 +43,3 @@ jobs:
           sudo docker run -d --name paytm-main -p 3005:3000 rutvk00/paytm-main:latest
 
 
-
-
