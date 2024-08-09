@@ -53,3 +53,4 @@ jobs:
           # Run your application container linked to PostgreSQL
           sudo docker run -d --name paytm-main --link paytm-postgres:postgres -p 3005:3000 --restart always -e DATABASE_URL=postgresql://postgres:mysecretpassword@paytm-postgres:5432/postgres rutvk00/paytm-main:latest
 
+
