@@ -2,8 +2,8 @@
   "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "builds": [
     {
-      "src": "apps/user-app/next.config.js",
-      "use": "@vercel/next"
+      "src": "package.json",
+      "use": "@vercel/node"
     }
   ],
   "outputDirectory": "apps/user-app/.next"
