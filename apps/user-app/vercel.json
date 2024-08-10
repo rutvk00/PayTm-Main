@@ -1,5 +1,7 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ],
   "builds": [
     {
       "src": "apps/user-app/next.config.js",
