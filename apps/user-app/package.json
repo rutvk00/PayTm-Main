@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3001",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint . --max-warnings 0"
-  },
+  "prisma:generate": "cd ../.. && npm run db:generate",
+  "dev": "next dev --port 3001",
+  "build": "npm run prisma:generate && next build",
+  "start": "next start",
+  "lint": "eslint . --max-warnings 0"
+}
+,
   "dependencies": {
     "@repo/store": "*",
     "@repo/ui": "*",
