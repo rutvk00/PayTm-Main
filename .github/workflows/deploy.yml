@@ -40,7 +40,8 @@ jobs:
           sudo docker pull rutvk00/paytm-main:latest
           sudo docker stop paytm-main || true
           sudo docker rm paytm-main || true
-          sudo docker run -d --name paytm-main -p 3005:3000 -e DATABASE_URL=${{ secrets.DATABASE_URL }} --restart always rutvk00/paytm-main:latest
+          sudo docker run -d --name paytm-main -p 3005:3000 -e DATABASE_URL=${{ secrets.DATABASE_URL }} -e NEXTAUTH_URL="http://ec2-13-201-168-91.ap-south-1.compute.amazonaws.com" --restart always rutvk00/paytm-main:latest
+
 
 
 
